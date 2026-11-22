@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>職場分寸與選擇：蔡康永式的職場應對之道</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        rice: '#F7F4EE',
+                        paper: '#FAF8F5',
+                        cardBg: '#EFEBE1',
+                        cardHover: '#E7E2D5',
+                        ink: '#22201E',
+                        inkLight: '#4A4641',
+                        inkMuted: '#736D64',
+                        cinnabar: '#9E4738',
+                        cinnabarHover: '#853B2E',
+                        sage: '#4F635B',
+                        sageHover: '#3F5049',
+                        hairline: '#DCD5C9',
+                        hairlineDark: '#CFC6B6'
+                    },
+                    fontFamily: {
+                        serif: ['Noto Serif TC', 'serif'],
+                        sans: ['Noto Sans TC', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts: Noto Serif TC & Noto Sans TC -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #F7F4EE;
+            color: #22201E;
+            font-family: 'Noto Sans TC', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4, .font-serif-tc {
+            font-family: 'Noto Serif TC', serif;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F7F4EE;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #DCD5C9;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9E4738;
+        }
+        /* 3D Card Flip styling */
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+        .card-inner {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .card-inner.is-flipped {
+            transform: rotateY(180deg);
+        }
+        .card-front, .card-back {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+        .card-back {
+            transform: rotateY(180deg);
+        }
+        /* Subtle fade transitions */
+        .fade-enter {
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .fade-enter-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-cinnabar selection:text-white">
+
+    <!-- Toast Notification Container -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-10 opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-3 bg-ink text-rice px-5 py-3 rounded-lg shadow-xl border border-hairlineDark">
+        <i class="fa-solid fa-circle-check text-cinnabar text-lg"></i>
+        <span id="toast-text" class="text-sm font-medium tracking-wide">已複製說法至剪貼簿</span>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-[#F7F4EE]/90 backdrop-blur-md border-b border-hairline">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <span class="w-8 h-8 rounded-full bg-cinnabar text-rice flex items-center justify-center font-serif-tc font-bold text-sm shadow-sm group-hover:bg-cinnabarHover transition-colors">蔡</span>
+                <div>
+                    <h1 class="font-serif-tc font-bold text-base sm:text-lg text-ink tracking-wider">職場分寸與選擇</h1>
+                    <p class="text-[10px] sm:text-xs text-inkMuted tracking-normal -mt-0.5">蔡康永式的職場應對之道</p>
+                </div>
+            </a>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-inkLight">
+                <a href="#philosophy" class="hover:text-cinnabar transition-colors py-1 border-b-2 border-transparent hover:border-cinnabar">核心心法</a>
+                <a href="#dilemma-lab" class="hover:text-cinnabar transition-colors py-1 border-b-2 border-transparent hover:border-cinnabar">處境拆解室</a>
+                <a href="#custom-reframer" class="hover:text-cinnabar transition-colors py-1 border-b-2 border-transparent hover:border-cinnabar">私人翻譯機</a>
+                <a href="#card-deck" class="hover:text-cinnabar transition-colors py-1 border-b-2 border-transparent hover:border-cinnabar">分寸備忘卡</a>
+            </nav>
+            <a href="#custom-reframer" class="text-xs sm:text-sm px-4 py-2 rounded-full border border-cinnabar text-cinnabar hover:bg-cinnabar hover:text-rice transition-all duration-200 font-medium">
+                <i class="fa-solid fa-wand-magic-sparkles mr-1.5"></i>翻譯我的難題
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="py-16 sm:py-24 px-4 sm:px-6 max-w-5xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cardBg border border-hairline text-xs text-inkMuted mb-6">
+                <span class="w-1.5 h-1.5 rounded-full bg-cinnabar"></span>
+                <span>認知作業系統蒸餾版</span>
+            </div>
+            
+            <h2 class="font-serif-tc font-bold text-3xl sm:text-5xl text-ink leading-tight tracking-wide mb-6">
+                成熟不是沒有刺，<br class="sm:hidden" />而是看清每一根刺的代價，<br />
+                得體地為自己做選擇。
+            </h2>
+
+            <p class="text-base sm:text-lg text-inkLight max-w-2xl mx-auto font-light leading-relaxed mb-10">
+                職場裡的煎熬，往往不是因為道理不懂，而是不想承擔選擇後的代價。<br class="hidden sm:inline"/>
+                這裡不教空洞的雞湯，也不教討好式的偽裝；教你如何劃清邊界、溫柔自保。
+            </p>
+
+            <!-- Quick Nav Cards / Features Overview -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-left">
+                <a href="#philosophy" class="p-4 rounded-xl bg-paper border border-hairline hover:border-cinnabar/40 hover:shadow-sm transition-all group">
+                    <div class="text-cinnabar text-lg mb-2 group-hover:scale-110 transition-transform"><i class="fa-solid fa-compass"></i></div>
+                    <div class="font-serif-tc font-bold text-sm text-ink mb-1">四大心智模型</div>
+                    <div class="text-xs text-inkMuted">課題分離與代價意識</div>
+                </a>
+                <a href="#dilemma-lab" class="p-4 rounded-xl bg-paper border border-hairline hover:border-cinnabar/40 hover:shadow-sm transition-all group">
+                    <div class="text-sage text-lg mb-2 group-hover:scale-110 transition-transform"><i class="fa-solid fa-flask-vial"></i></div>
+                    <div class="font-serif-tc font-bold text-sm text-ink mb-1">處境拆解室</div>
+                    <div class="text-xs text-inkMuted">5 大經典卡點句型</div>
+                </a>
+                <a href="#custom-reframer" class="p-4 rounded-xl bg-paper border border-hairline hover:border-cinnabar/40 hover:shadow-sm transition-all group">
+                    <div class="text-cinnabar text-lg mb-2 group-hover:scale-110 transition-transform"><i class="fa-solid fa-language"></i></div>
+                    <div class="font-serif-tc font-bold text-sm text-ink mb-1">私人翻譯機</div>
+                    <div class="text-xs text-inkMuted">客製化得體對策</div>
+                </a>
+                <a href="#card-deck" class="p-4 rounded-xl bg-paper border border-hairline hover:border-cinnabar/40 hover:shadow-sm transition-all group">
+                    <div class="text-sage text-lg mb-2 group-hover:scale-110 transition-transform"><i class="fa-solid fa-note-sticky"></i></div>
+                    <div class="font-serif-tc font-bold text-sm text-ink mb-1">隨身分寸卡</div>
+                    <div class="text-xs text-inkMuted">每日冷靜備忘錄</div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Section 1: Core Philosophy (四大心智模型) -->
+        <section id="philosophy" class="py-16 px-4 sm:px-6 bg-paper border-y border-hairline">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="font-serif-tc font-bold text-2xl sm:text-3xl text-ink mb-3">序言與核心心法</h2>
+                    <p class="text-sm sm:text-base text-inkMuted max-w-xl mx-auto">
+                        蔡康永式的「高情商」，從不是無底線忍耐或滿口諂媚，而是清楚意識到權力張力後，優雅地守住自我。
+                    </p>
+                </div>
+
+                <!-- 4 Mental Models Accordion / Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="mental-models-grid">
+                    <!-- Model 1 -->
+                    <div class="p-6 rounded-2xl bg-rice border border-hairline hover:border-cinnabar/30 transition-all">
+                        <div class="flex items-start justify-between mb-4">
+                            <span class="w-8 h-8 rounded-full bg-cinnabar/10 text-cinnabar font-serif-tc font-bold flex items-center justify-center text-sm">01</span>
+                            <span class="px-2.5 py-0.5 rounded text-[11px] font-medium bg-cardBg text-inkMuted">主體性劃分</span>
+                        </div>
+                        <h3 class="font-serif-tc font-bold text-lg text-ink mb-2">課題分離模型：他的情緒不是你的責任</h3>
+                        <p class="text-xs sm:text-sm text-inkLight leading-relaxed mb-4">
+                            職場中八成的消耗，來自於試圖去控管主管的評價、改變同事的脾氣。請看清：別人的焦慮與情緒是他該面對的課題，而你只需要為自己的產出與選擇負責。
+                        </p>
+                        <div class="p-3 rounded-lg bg-paper border border-hairline text-xs text-inkMuted">
+                            <strong class="text-cinnabar block mb-0.5">心法白話：</strong>
+                            「他現在很生氣是他的課題，我現在要做的是把這份數據校對好，這是我的課題。」
+                        </div>
+                    </div>
+
+                    <!-- Model 2 -->
+                    <div class="p-6 rounded-2xl bg-rice border border-hairline hover:border-sage/30 transition-all">
+                        <div class="flex items-start justify-between mb-4">
+                            <span class="w-8 h-8 rounded-full bg-sage/10 text-sage font-serif-tc font-bold flex items-center justify-center text-sm">02</span>
+                            <span class="px-2.5 py-0.5 rounded text-[11px] font-medium bg-cardBg text-inkMuted">清醒決策</span>
+                        </div>
+                        <h3 class="font-serif-tc font-bold text-lg text-ink mb-2">代價意識模型：世上沒有免費的舒服</h3>
+                        <p class="text-xs sm:text-sm text-inkLight leading-relaxed mb-4">
+                            每一個決定都附帶標價。選擇當個好說話的人，代價就是工作量爆表；選擇嚴格劃清界線，代價就是可能失去一部分虛假的熱絡。成熟是看清標價後，心甘情願支付。
+                        </p>
+                        <div class="p-3 rounded-lg bg-paper border border-hairline text-xs text-inkMuted">
+                            <strong class="text-sage block mb-0.5">心法白話：</strong>
+                            「我不必尋找無痛的完美方案，我只需要挑一個我扛得起代價的選項。」
+                        </div>
+                    </div>
+
+                    <!-- Model 3 -->
+                    <div class="p-6 rounded-2xl bg-rice border border-hairline hover:border-sage/30 transition-all">
+                        <div class="flex items-start justify-between mb-4">
+                            <span class="w-8 h-8 rounded-full bg-sage/10 text-sage font-serif-tc font-bold flex items-center justify-center text-sm">03</span>
+                            <span class="px-2.5 py-0.5 rounded text-[11px] font-medium bg-cardBg text-inkMuted">公共與私密</span>
+                        </div>
+                        <h3 class="font-serif-tc font-bold text-lg text-ink mb-2">得體自保模型：得體不是虛偽，而是護城河</h3>
+                        <p class="text-xs sm:text-sm text-inkLight leading-relaxed mb-4">
+                            把禮貌當成鎧甲，而非掏心掏肺。在公共場域給足對方面子與台階，不是為了討好對方，而是降低衝突成本，保護內心那個真實且脆弱的自己。
+                        </p>
+                        <div class="p-3 rounded-lg bg-paper border border-hairline text-xs text-inkMuted">
+                            <strong class="text-sage block mb-0.5">心法白話：</strong>
+                            「客氣是為了保持距離，得體是為了讓對話在安全範圍內結束。」
+                        </div>
+                    </div>
+
+                    <!-- Model 4 -->
+                    <div class="p-6 rounded-2xl bg-rice border border-hairline hover:border-cinnabar/30 transition-all">
+                        <div class="flex items-start justify-between mb-4">
+                            <span class="w-8 h-8 rounded-full bg-cinnabar/10 text-cinnabar font-serif-tc font-bold flex items-center justify-center text-sm">04</span>
+                            <span class="px-2.5 py-0.5 rounded text-[11px] font-medium bg-cardBg text-inkMuted">解構劇本</span>
+                        </div>
+                        <h3 class="font-serif-tc font-bold text-lg text-ink mb-2">視角切換模型：從受害者變成劇場觀眾</h3>
+                        <p class="text-xs sm:text-sm text-inkLight leading-relaxed mb-4">
+                            當你覺得被壓迫時，試著拉遠時間與視角。對方可能只是在一場名為『權力表演』的劇本裡扮演他的角色。你不必入戲太深，站遠一點看，死結就會鬆開。
+                        </p>
+                        <div class="p-3 rounded-lg bg-paper border border-hairline text-xs text-inkMuted">
+                            <strong class="text-cinnabar block mb-0.5">心法白話：</strong>
+                            「他正在台上表演他的焦慮，我是底下的觀眾，我不必跳上去替他排演。」
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Interactive Dilemma Lab (處境拆解室) -->
+        <section id="dilemma-lab" class="py-16 px-4 sm:px-6 max-w-5xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="text-xs uppercase tracking-widest font-semibold text-cinnabar block mb-1">Scenario Simulator</span>
+                <h2 class="font-serif-tc font-bold text-2xl sm:text-3xl text-ink mb-3">職場處境拆解室</h2>
+                <p class="text-sm text-inkMuted">選擇常見的卡點處境，切換對話場景，查看蔡康永式的拆解與客制句型。</p>
+            </div>
+
+            <!-- Scenario Selection Pills -->
+            <div class="flex flex-wrap justify-center gap-2 mb-8" id="scenario-selector">
+                <!-- Javascript rendered pills -->
+            </div>
+
+            <!-- Scene Context Selector (1-on-1 vs Public) -->
+            <div class="flex justify-center mb-8">
+                <div class="bg-cardBg p-1.5 rounded-xl border border-hairline inline-flex items-center gap-1">
+                    <button id="btn-context-1on1" onclick="switchContext('1on1')" class="px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all flex items-center gap-2 bg-paper text-ink shadow-sm">
+                        <i class="fa-solid fa-user"></i> 👤 一對一私下對話
+                    </button>
+                    <button id="btn-context-public" onclick="switchContext('public')" class="px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all flex items-center gap-2 text-inkMuted hover:text-ink">
+                        <i class="fa-solid fa-users"></i> 👥 多人公開會議
+                    </button>
+                </div>
+            </div>
+
+            <!-- Active Scenario Content Card -->
+            <div id="dilemma-card-container" class="bg-paper border border-hairline rounded-2xl p-6 sm:p-8 shadow-sm transition-all">
+                <!-- Javascript dynamically updates this content -->
+            </div>
+        </section>
+
+        <!-- Section 3: Custom Situation Reframer (私人處境翻譯機) -->
+        <section id="custom-reframer" class="py-16 px-4 sm:px-6 bg-cardBg border-y border-hairline">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-10">
+                    <span class="text-xs uppercase tracking-widest font-semibold text-sage block mb-1">Custom Workplace Reframer</span>
+                    <h2 class="font-serif-tc font-bold text-2xl sm:text-3xl text-ink mb-3">私人處境翻譯機</h2>
+                    <p class="text-sm text-inkMuted">輸入你目前卡住的一句話或困境，選擇最害怕的代價，即刻翻譯成得體對策。</p>
+                </div>
+
+                <div class="bg-paper border border-hairline rounded-2xl p-6 sm:p-8 shadow-sm">
+                    <form id="reframer-form" onsubmit="handleReframing(event)" class="space-y-6">
+                        <!-- Input Query / Preset -->
+                        <div>
+                            <label class="block font-serif-tc font-bold text-sm text-ink mb-2">
+                                你現在遇到的對話或處境是什麼？
+                            </label>
+                            <textarea id="custom-input" rows="3" class="w-full p-3.5 rounded-xl bg-rice border border-hairline text-sm text-ink focus:outline-none focus:border-cinnabar transition-colors placeholder:text-inkMuted/60" placeholder="例如：主管總是下班前叫我「順便」改一份簡報，但我今晚已經有安排，又不敢直接拒絕……"></textarea>
+
+                            <!-- Quick Preset Chips -->
+                            <div class="mt-2.5 flex flex-wrap gap-2 text-xs">
+                                <span class="text-inkMuted self-center mr-1">試試快速帶入：</span>
+                                <button type="button" onclick="fillPreset(1)" class="px-2.5 py-1 rounded bg-rice hover:bg-cardBg border border-hairline text-inkLight transition-colors">「這件事非你不可，辛苦一下」</button>
+                                <button type="button" onclick="fillPreset(2)" class="px-2.5 py-1 rounded bg-rice hover:bg-cardBg border border-hairline text-inkLight transition-colors">「這點小事你怎麼會處理成這樣？」</button>
+                                <button type="button" onclick="fillPreset(3)" class="px-2.5 py-1 rounded bg-rice hover:bg-cardBg border border-hairline text-inkLight transition-colors">「大家都在加班，你怎麼好意思先走？」</button>
+                            </div>
+                        </div>
+
+                        <!-- Fear Selector -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block font-serif-tc font-bold text-sm text-ink mb-2">你最害怕承受的代價／顧慮：</label>
+                                <select id="fear-input" class="w-full p-3 rounded-xl bg-rice border border-hairline text-sm text-ink focus:outline-none focus:border-cinnabar">
+                                    <option value="fear-conflict">怕場面僵掉、氣氛尷尬 (首要保住和氣)</option>
+                                    <option value="fear-time">怕時間精力被拖垮 (首要保住產出與下班時間)</option>
+                                    <option value="fear-blame">怕背黑鍋或白忙一場 (首要保住職責與邊界)</option>
+                                    <option value="fear-label">怕被貼上「不配合/沒能力」的標籤 (首要保住專業形象)</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block font-serif-tc font-bold text-sm text-ink mb-2">發生的場合與形式：</label>
+                                <select id="setting-input" class="w-full p-3 rounded-xl bg-rice border border-hairline text-sm text-ink focus:outline-none focus:border-cinnabar">
+                                    <option value="1on1">一對一私下對話 / 當面溝通</option>
+                                    <option value="public">多人公開會議 / 團隊面前</option>
+                                    <option value="text">LINE / Slack / Email 等文字訊息</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="w-full py-3.5 rounded-xl bg-cinnabar hover:bg-cinnabarHover text-rice font-serif-tc font-bold text-base transition-colors shadow-sm flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> 蒸餾蔡康永式得體解法
+                        </button>
+                    </form>
+
+                    <!-- Reframer Result Container -->
+                    <div id="reframer-result" class="hidden mt-8 pt-8 border-t border-hairline fade-enter">
+                        <!-- Rendered by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Boundary & Reflection Quote Deck (每日分寸隨身卡) -->
+        <section id="card-deck" class="py-16 px-4 sm:px-6 max-w-5xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="text-xs uppercase tracking-widest font-semibold text-cinnabar block mb-1">Daily Reflection Deck</span>
+                <h2 class="font-serif-tc font-bold text-2xl sm:text-3xl text-ink mb-3">分寸隨身備忘卡</h2>
+                <p class="text-sm text-inkMuted">抽一張冷靜備忘卡，提醒自己在混亂職場中保有理智與幽默感。</p>
+            </div>
+
+            <!-- Deck Controls -->
+            <div class="flex justify-center gap-3 mb-8">
+                <button onclick="drawRandomCard()" class="px-5 py-2.5 rounded-full bg-ink text-rice hover:bg-inkLight text-xs sm:text-sm font-medium transition-colors flex items-center gap-2 shadow-sm">
+                    <i class="fa-solid fa-shuffle"></i> 隨機抽一張分寸卡
+                </button>
+                <button onclick="filterCards('all')" id="btn-filter-all" class="px-4 py-2 rounded-full border border-hairlineDark text-ink text-xs sm:text-sm font-medium hover:bg-cardBg transition-colors bg-cardBg">
+                    全部展示 (<span id="count-all">8</span>)
+                </button>
+                <button onclick="filterCards('saved')" id="btn-filter-saved" class="px-4 py-2 rounded-full border border-hairline text-inkMuted text-xs sm:text-sm font-medium hover:bg-cardBg transition-colors">
+                    <i class="fa-solid fa-bookmark text-cinnabar mr-1"></i>已收藏 (<span id="count-saved">0</span>)
+                </button>
+            </div>
+
+            <!-- Cards Grid -->
+            <div id="cards-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Javascript populated card flip deck -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-ink text-rice py-12 px-4 sm:px-6 border-t border-inkLight">
+        <div class="max-w-5xl mx-auto text-center space-y-4">
+            <div class="font-serif-tc font-bold text-lg tracking-widest text-cardBg">職場分寸與選擇</div>
+            <p class="text-xs text-inkMuted max-w-md mx-auto leading-relaxed">
+                本工具基於《蔡康永的說話之道》與公開演講認知架構提煉。<br/>
+                願你在高張力的職場環境中，說得體的話，做清醒的選擇，過不委屈的人生。
+            </p>
+            <div class="pt-4 border-t border-inkLight/40 text-[11px] text-inkMuted">
+                © 職場分寸認知模型 Skill Distillation · Inspired by Kevin Tsai's Philosophy
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // --- 1. DATA DEFINITIONS ---
+
+        // 5 Core Dilemma Scenarios with 1-on-1 vs Public Variations
+        const SCENARIOS = [
+            {
+                id: 'boss-monologue',
+                title: '01. 老闆自說自話三小時沒重點',
+                shortName: '老闆獨白 3 小時',
+                icon: 'fa-user-tie',
+                surfaceIssue: '表面卡點：會議時間被無限拉長，打斷怕被視為不耐煩，不打斷手邊工作全部堆積。',
+                coreTension: {
+                    '1on1': '在一對一場合，老闆常把員工當成「梳理思緒與消化焦慮」的聽眾。你付出的是隱形的情緒勞動與時間成本。',
+                    'public': '在公開會議場合，老闆需要「權威感與公開舞台」。全場同事都在等一個人既不傷面子、又能幫大家解套。'
+                },
+                tsaiInsight: '「他現在講的不是指令，是他腦海裡的草稿。你不用把每一句草稿都當成必須執行的命令，你只需要替他做收斂。」',
+                scripts: {
+                    '1on1': [
+                        {
+                            type: '幫他收斂型',
+                            tag: '焦點聚焦',
+                            text: '「剛剛聽您梳理這幾個面向非常完整，我覺得最核心的是『先落地的第一步』。我們今天先拍板 A 方案的細節，剩下的我整理成對齊清單再回報您，好嗎？」',
+                            tradeoff: '獲得：劃定本次會議產出；代價：需要事後補一份簡短清單。'
+                        },
+                        {
+                            type: '客觀限制型',
+                            tag: '時間邊界',
+                            text: '「我等一下五點半有個必須準時交出的進度（或下一個行程），怕時間不夠把細節談透，我們先花十五分鐘把今天最急的三個決策拍板，好嗎？」',
+                            tradeoff: '獲得：保護下班或後續時間；代價：需要提前且得體地講出客觀限制。'
+                        },
+                        {
+                            type: '會後留證型',
+                            tag: '文字確認',
+                            text: '「謝謝您剛才分享的大方向。為了避免我理解有偏差，我等一下發一份『今日討論的三個執行重點與優先順序』給您確認，我就先依這個順序推進。」',
+                            tradeoff: '獲得：防白工防記錯；代價：主動承擔記錄整理工作。'
+                        }
+                    ],
+                    'public': [
+                        {
+                            type: '幫他收斂型',
+                            tag: '分工推進',
+                            text: '「老闆剛才提的這幾個策略大方向很明確。為了讓各組今天能立刻分工執行，我們是不是先確定『這個月最先啟動的指標』，讓大家分頭準備？」',
+                            tradeoff: '獲得：拯救全場同事時間；代價：在會議中展現推動節奏的存在感。'
+                        },
+                        {
+                            type: '客觀限制型',
+                            tag: '保留續集',
+                            text: '「考慮到今天會議時間已接近尾聲，大家後面各有預定產出，我們今天先定下 A、B 兩點，C 點留到下週專題會再深入研討？」',
+                            tradeoff: '獲得：合法合規結束會議；代價：需要將部分議題順延。'
+                        },
+                        {
+                            type: '會後留證型',
+                            tag: '摘要發送',
+                            text: '「謝謝老闆為大家畫出的藍圖。會後我來發一份會議簡報摘要，把剛才談到的各組任務分工點出來，大家依此回覆預計時程。」',
+                            tradeoff: '獲得：建立專業有條理形象；代價：事後需要稍微排版會議紀錄。'
+                        }
+                    ]
+                }
+            },
+            {
+                id: 'public-blame',
+                title: '02. 會議上被突然甩鍋或公開質疑',
+                shortName: '公開甩鍋與質疑',
+                icon: 'fa-shield-halved',
+                surfaceIssue: '表面卡點：當眾被指責或被把責任推過來，直接反擊怕氣氛僵掉，默默忍受又變成認罪。',
+                coreTension: {
+                    '1on1': '私下被質疑時，對方可能是在試探你的底線或轉移他自己的失誤。',
+                    'public': '在公眾面前，這是權力與形象的審判。最忌諱陷入情緒情緒對罵，要用「事實與客觀流程」把槍口移開。'
+                },
+                tsaiInsight: '「被甩鍋時，不要接過那個鍋，也不要當場把鍋砸在對方頭上。把鍋輕輕放在桌上，大家一起看清裡面的事實。」',
+                scripts: {
+                    '1on1': [
+                        {
+                            type: '還原事實型',
+                            tag: '釐清節點',
+                            text: '「這件事當時的進度停在 A 階段，因為前置資料在 5 號才提供。我們現在可以一起看看怎麼補救後續時程。」',
+                            tradeoff: '獲得：用客觀事實澄清自己；代價：需要冷靜提出數據或時間軸。'
+                        },
+                        {
+                            type: '問題轉向型',
+                            tag: '聚焦解決',
+                            text: '「我明白你對現在結果有顧慮，不過如果追究責任，當時的備忘錄上已經確認過風險。我們現在的重點是改方案還是延時程？」',
+                            tradeoff: '獲得：把情緒爭執轉為方案選擇；代價：需要預先掌握當初記錄。'
+                        },
+                        {
+                            type: '邊界表明型',
+                            tag: '權責區隔',
+                            text: '「這部分的決策權當時是由營運組拍板的，我負責的是執行執行面的技術對接。如果需要調整範圍，可能要請營運組重新確認。」',
+                            tradeoff: '獲得：劃清責任範疇；代價：明確婉拒不屬於自己的責任。'
+                        }
+                    ],
+                    'public': [
+                        {
+                            type: '還原事實型',
+                            tag: '冷靜定格',
+                            text: '「理解大家對這個結果的關心。依據上週例會記錄，本階段目標確實是先完成測試版。若現在要調整驗收標準，我們現場重新確認人力排期。」',
+                            tradeoff: '獲得：當眾用事實建立防護網；代價：需要言詞極度客觀不帶酸味。'
+                        },
+                        {
+                            type: '問題轉向型',
+                            tag: '拉回大局',
+                            text: '「剛才提到的問題確實值得注意。為了不耽誤大家今天的會議主題，會後我整理一份具體的時間記錄給各位參閱，我們今天先回到主議題。」',
+                            tradeoff: '獲得：展現大局觀與高情商；代價：會後必須準備書面佐證。'
+                        },
+                        {
+                            type: '邊界表明型',
+                            tag: '點到為止',
+                            text: '「這項業務的審核流程在二月已移交給 A 團隊，我這邊主要提供數據支援。如果需要細節說明，請 A 團隊補足比較準確。」',
+                            tradeoff: '獲得：優雅把話題切回權責單位；代價：可能會讓甩鍋者有點尷尬。'
+                        }
+                    ]
+                }
+            },
+            {
+                id: 'colleague-guilt',
+                title: '03. 同事情緒勒索、把分內事推給你',
+                shortName: '同事情緒勒索推工作',
+                icon: 'fa-handshake-angle',
+                surfaceIssue: '表面卡點：同事裝可憐「這只有你會」、「幫我一下死不了」，不幫怕被說冷血，幫了變成你的常態工作。',
+                coreTension: {
+                    '1on1': '對方在利用你們之間的人情溫情默契，來模糊個人的職務界線。',
+                    'public': '對方試圖在眾人面前把你架在「不幫忙就是沒團隊精神」道德高台上。'
+                },
+                tsaiInsight: '「熱心是禮物，不是你的義務。當你的熱心被當成理所當然時，收回它是對彼此最健康的提醒。」',
+                scripts: {
+                    '1on1': [
+                        {
+                            type: '溫柔堅持型',
+                            tag: '肯定能力拒絕事項',
+                            text: '「謝謝你信任我的專業，但我本週自己的專案進度已經排滿了，這次可能沒辦法幫你分擔。你可以找主管調配資源看看。」',
+                            tradeoff: '獲得：守住精力與時間；代價：打破「你好說話」的錯覺。'
+                        },
+                        {
+                            type: '交換代價型',
+                            tag: '代價對等',
+                            text: '「我可以幫你看這份報告的 10%，但相應地，今天下午的例行數據要麻煩你幫我 key，因為我時間真的擠不出來。」',
+                            tradeoff: '獲得：讓對方意識到你的時間也有價值；代價：需要進行微型談判。'
+                        },
+                        {
+                            type: '授人以漁型',
+                            tag: '給方法不代勞',
+                            text: '「這套系統的操作我有寫過一份 SOP 檔案，我寄給你。你自己跑一遍會比較清楚，有卡住的步驟你再截圖問我。」',
+                            tradeoff: '獲得：兼顧同事情面又不幫做白工；代價：需要花 2 分鐘找資料發給他。'
+                        }
+                    ],
+                    'public': [
+                        {
+                            type: '溫柔堅持型',
+                            tag: '團隊任務原則',
+                            text: '「這塊業務涉及跨部門權限，依公司規定需要先經由組長分配。如果你手頭工作過載，建議我們現在跟組長提排期調整。」',
+                            tradeoff: '獲得：用制度作為合法防線；代價：將私下推托升級至主管層面。'
+                        },
+                        {
+                            type: '交換代價型',
+                            tag: '優先順序公開',
+                            text: '「如果團隊覺得這件事目前比我手上的 B 專案更急，只要主管同意暫緩 B 專案，我完全配合交接。」',
+                            tradeoff: '獲得：把選擇權交還給決策者；代價：需要公開討論優先級。'
+                        },
+                        {
+                            type: '授人以漁型',
+                            tag: '公開資源分享',
+                            text: '「我之前做過類似模板，我待會上傳到共享資料夾供大家參考，大家可以直接套用，這樣比較快。」',
+                            tradeoff: '獲得：展現團隊合作又不必幫忙做；代價：需分享現有資源。'
+                        }
+                    ]
+                }
+            },
+            {
+                id: 'last-minute-task',
+                title: '04. 下班前十分鐘收到「順便幫忙」的急件',
+                shortName: '下班前 10 分鐘急件',
+                icon: 'fa-clock',
+                surfaceIssue: '表面卡點：已經收拾好東西準備下班，主管突然扔下一句「這個很急順便處理一下」，不做怕不配合，做了無預警加班。',
+                coreTension: {
+                    '1on1': '對方的時間管理失空，轉嫁成了你的突發危機。',
+                    'public': '在群組或公開場合拋出「急件」，是在營造全體緊急的壓力氛圍。'
+                },
+                tsaiInsight: '「對別人來說很急的事，不等於對你來說很重要。學會給『急事』劃定時間的邊界，別讓別人的火災燒掉你的房子。」',
+                scripts: {
+                    '1on1': [
+                        {
+                            type: '時間劃界型',
+                            tag: '時間邊界',
+                            text: '「我今晚已經有預定的個人安排，現在處理只能做到初步整理。如果明天早上八點半我優先處理這件事，九點前交給您，時間上來得及嗎？」',
+                            tradeoff: '獲得：保住今晚下班時間；代價：明早需要第一時間優先處理。'
+                        },
+                        {
+                            type: '代價核對型',
+                            tag: '品質評估',
+                            text: '「這份文件完整處理需要 2 個小時。若要今晚出稿，可能只能做基礎版驗收；若要完整品質，我明天上午精修交出，您建議哪一種？」',
+                            tradeoff: '獲得：讓對方看清急件的品質代價；代價：需要把主導權丟回給對方。'
+                        },
+                        {
+                            type: '客觀承諾型',
+                            tag: '確立交付標準',
+                            text: '「收到。我現在先花 10 分鐘把框架定出來寄給您，細節數據我明天一早進公司第一時間補齊。」',
+                            tradeoff: '獲得：展現負責任態度同時及時抽身；代價：當下仍需付出 10 分鐘。'
+                        }
+                    ],
+                    'public': [
+                        {
+                            type: '時間劃界型',
+                            tag: '公開確認時程',
+                            text: '「已收到需求。考量到目前已過標準工時，我已將此項納入明日首要待辦，預計明早 10:00 前完成並發至群組。」',
+                            tradeoff: '獲得：專業回覆並建立下班邊界；代價：字句需要堅定且得體。'
+                        },
+                        {
+                            type: '代價核對型',
+                            tag: '資源調配請求',
+                            text: '「若這項急件今晚必須上線，需要另外兩位同仁協助分工審核，請確定今晚加班資源是否可授權啟動？」',
+                            tradeoff: '獲得：讓提出者意識到急件成本高昂；代價：需要拉出明確的運作規則。'
+                        },
+                        {
+                            type: '客觀承諾型',
+                            tag: '進度公告',
+                            text: '「已先確認資料庫庫存，第一階段無異常。完整分析報告將於明日上班後開始撰寫，感謝大家。」',
+                            tradeoff: '獲得：先給安撫定心丸，實質工作明早做；代價：無。'
+                        }
+                    ]
+                }
+            },
+            {
+                id: 'fear-of-saying-no',
+                title: '05. 想拒絕不合理要求，又怕被貼不配合標籤',
+                shortName: '想拒絕又怕被貼標籤',
+                icon: 'fa-ban',
+                surfaceIssue: '表面卡點：面對超載的需求或不屬於職責的事，心裡一百個不願意，但直接說「不」怕被貼上態度不好、沒能力的標籤。',
+                coreTension: {
+                    '1on1': '你害怕對方的心滿意足因為你的一個「不」而破滅。',
+                    'public': '你害怕在團隊面前成為那個「破壞團隊和諧」的異類。'
+                },
+                tsaiInsight: '「完美的拒絕，不是真的說出『我不幹』三個字，而是說『我很想幫忙，但現實條件不允許』，把問題還給客觀環境。」',
+                scripts: {
+                    '1on1': [
+                        {
+                            type: '條件交換型',
+                            tag: '替換優先級',
+                            text: '「我很樂意接下這項任務！不過我目前手上有 A 和 B 兩個專案正在衝刺。如果要加入這項，您建議我先暫停哪一個？」',
+                            tradeoff: '獲得：不用直接說拒絕，讓主管做選擇；代價：需要清晰掌握現有工作量。'
+                        },
+                        {
+                            type: '界線替代型',
+                            tag: '部分拒絕',
+                            text: '「這整套企劃我全盤接下會有困難，但我可以支援其中的數據分析部分。其餘執行面的部分可能需要另尋同仁合作。」',
+                            tradeoff: '獲得：展現合作意願同時守住核心精力；代價：需要承擔一部分可行工作。'
+                        },
+                        {
+                            type: '客觀屏障型',
+                            tag: '搬出資源限制',
+                            text: '「這件事的目標很棒，但我評估過目前的預算與人力資源，硬做品質會打折。建議我們等下季度資源到位再啟動。」',
+                            tradeoff: '獲得：用專業評估優雅否決；代價：需要提出具體的客觀理由。'
+                        }
+                    ],
+                    'public': [
+                        {
+                            type: '條件交換型',
+                            tag: '團隊容量評估',
+                            text: '「團隊這週的開發能量已經達到 100%。如果要把這項新需求擠進本週 Sprint，我們需要在會上討論哪一項舊需求退回 Backlog。」',
+                            tradeoff: '獲得：用數據與流程保護團隊與自己；代價：需公開檢視工作看板。'
+                        },
+                        {
+                            type: '界線替代型',
+                            tag: '顧問式支援',
+                            text: '「我們組可以提供先前累積的範本與諮詢支援，但主要執行端建議由專責單位主導，這樣流程比較順暢。」',
+                            tradeoff: '獲得：定位為指導角色而非苦力；代價：仍需提供諮詢。'
+                        },
+                        {
+                            type: '客觀屏障型',
+                            tag: '遵從合規標準',
+                            text: '「為了確保專案符合品質驗收規範，未經前端評估的需求暫不建議直接上線，我們先依既定標準流程走。」',
+                            tradeoff: '獲得：搬出合規大旗，無人能指責態度；代價：流程較嚴謹。'
+                        }
+                    ]
+                }
+            }
+        ];
+
+        // Reflection Quote Deck Data
+        const QUOTE_CARDS = [
+            {
+                id: 1,
+                quote: "高情商不是處處忍讓，而是清楚自己的界線在哪裡，並且優雅地讓別人知道。",
+                author: "蔡康永",
+                category: "關於邊界",
+                reflection: "職場上那些好說話的人，最後往往只換來做不完的雜事。劃清邊界，是尊重自己的第一步。"
+            },
+            {
+                id: 2,
+                quote: "當你覺得委屈的時候，問問自己：我是在為一個值得的目標付代價，還是在為別人的情緒買單？",
+                author: "蔡康永",
+                category: "關於代價",
+                reflection: "為目標付出的辛苦叫成長，為別人脾氣付出的消耗叫內耗。看清標價，心甘情願才不委屈。"
+            },
+            {
+                id: 3,
+                quote: "得體不是虛偽，而是幫彼此留個階梯，讓你能在不撕破臉的前提下，轉身離場。",
+                author: "蔡康永",
+                category: "關於得體",
+                reflection: "把禮貌當成你的防護罩。在公開場合給足對方顏面，是你保護私下自我的智慧。"
+            },
+            {
+                id: 4,
+                quote: "主管的焦慮是他自己的課題。你只需要把任務推進，不必把他腦海裡的雜音全都當成命令。",
+                author: "蔡康永",
+                category: "關於課題分離",
+                reflection: "學會在對話中做過濾器，而不是當個全盤收下的垃圾桶。"
+            },
+            {
+                id: 5,
+                quote: "完美的拒絕不是大聲喊『不』，而是冷靜地把現實條件攤開，把選擇權還給對方。",
+                author: "蔡康永",
+                category: "關於拒絕",
+                reflection: "「我很想幫忙，但資源有限」比「我不想做」更有力量，也更讓人無法反駁。"
+            },
+            {
+                id: 6,
+                quote: "職場只是一座舞台，你只是在這裡扮演一個角色。下戲之後，生活才是你自己的。",
+                author: "蔡康永",
+                category: "關於視角切換",
+                reflection: "不要把工作上的挫折當成對你個人的否定。那只是這齣劇本裡的劇情起伏。"
+            },
+            {
+                id: 7,
+                quote: "這世界上沒有免費的舒服。你想要自由，就要承受被不理解的風險。",
+                author: "蔡康永",
+                category: "關於選擇",
+                reflection: "別妄想討好所有人。成熟的人明白，有些誤解是維持個人邊界的必然成本。"
+            },
+            {
+                id: 8,
+                quote: "急事不等於要事。別讓別人的失控火災，燒掉了你原本平靜的生活步調。",
+                author: "蔡康永",
+                category: "關於時間",
+                reflection: "學會給突發需求冷卻的時間。很多看似刻不容緩的事，過了一晚其實什麼也不會發生。"
+            }
+        ];
+
+        // --- 2. APP STATE ---
+        let currentScenarioIndex = 0;
+        let currentContext = '1on1'; // '1on1' or 'public'
+        let savedCardIds = new Set();
+        let cardFilterMode = 'all'; // 'all' or 'saved'
+
+        // --- 3. DOM INIT & EVENT LISTENERS ---
+        window.addEventListener('DOMContentLoaded', () => {
+            renderScenarioPills();
+            renderActiveDilemmaCard();
+            renderQuoteCards();
+        });
+
+        // Toast Helper
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastText = document.getElementById('toast-text');
+            toastText.textContent = message;
+            toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-10');
+            toast.classList.add('opacity-100', 'translate-y-0');
+
+            setTimeout(() => {
+                toast.classList.remove('opacity-100', 'translate-y-0');
+                toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-10');
+            }, 2500);
+        }
+
+        // Copy Helper using execCommand for maximum iframe compat
+        function copyToClipboard(text, customToastMsg) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                showToast(customToastMsg || '已成功複製說法至剪貼簿！');
+            } catch (err) {
+                console.error('Copy failed', err);
+            }
+            document.body.removeChild(textarea);
+        }
+
+        // --- 4. SCENARIO LAB FUNCTIONS ---
+        function renderScenarioPills() {
+            const container = document.getElementById('scenario-selector');
+            container.innerHTML = SCENARIOS.map((sc, index) => {
+                const isActive = index === currentScenarioIndex;
+                const activeClasses = isActive 
+                    ? 'bg-cinnabar text-rice border-cinnabar shadow-sm font-semibold' 
+                    : 'bg-paper text-inkLight border-hairline hover:border-cinnabar/40 hover:text-ink';
+                return `
+                    <button onclick="selectScenario(${index})" class="px-3.5 py-2 rounded-xl border text-xs sm:text-sm transition-all flex items-center gap-2 ${activeClasses}">
+                        <i class="fa-solid ${sc.icon}"></i>
+                        <span>${sc.shortName}</span>
+                    </button>
+                `;
+            }).join('');
+        }
+
+        function selectScenario(index) {
+            currentScenarioIndex = index;
+            renderScenarioPills();
+            renderActiveDilemmaCard();
+        }
+
+        function switchContext(contextType) {
+            currentContext = contextType;
+            const btn1on1 = document.getElementById('btn-context-1on1');
+            const btnPublic = document.getElementById('btn-context-public');
+
+            if (contextType === '1on1') {
+                btn1on1.className = 'px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all flex items-center gap-2 bg-paper text-ink shadow-sm';
+                btnPublic.className = 'px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all flex items-center gap-2 text-inkMuted hover:text-ink';
+            } else {
+                btnPublic.className = 'px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all flex items-center gap-2 bg-paper text-ink shadow-sm';
+                btn1on1.className = 'px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all flex items-center gap-2 text-inkMuted hover:text-ink';
+            }
+
+            renderActiveDilemmaCard();
+        }
+
+        function renderActiveDilemmaCard() {
+            const sc = SCENARIOS[currentScenarioIndex];
+            const scripts = sc.scripts[currentContext];
+            const container = document.getElementById('dilemma-card-container');
+
+            const contextBadge = currentContext === '1on1' 
+                ? '<span class="px-2.5 py-1 rounded bg-sage/10 text-sage text-xs font-medium"><i class="fa-solid fa-user mr-1"></i>一對一私下處境</span>'
+                : '<span class="px-2.5 py-1 rounded bg-cinnabar/10 text-cinnabar text-xs font-medium"><i class="fa-solid fa-users mr-1"></i>多人公開會議處境</span>';
+
+            container.innerHTML = `
+                <div class="space-y-6 fade-enter-active">
+                    <!-- Title & Header -->
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-hairline">
+                        <div>
+                            <span class="text-xs text-inkMuted font-mono uppercase tracking-wider">Scenario Breakdown</span>
+                            <h3 class="font-serif-tc font-bold text-xl sm:text-2xl text-ink">${sc.title}</h3>
+                        </div>
+                        <div>${contextBadge}</div>
+                    </div>
+
+                    <!-- Friction Analysis -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl bg-rice border border-hairline">
+                            <h4 class="font-serif-tc font-bold text-xs uppercase tracking-wider text-inkMuted mb-2">
+                                <i class="fa-solid fa-circle-exclamation text-cinnabar mr-1.5"></i> ${sc.surfaceIssue.split('：')[0]}
+                            </h4>
+                            <p class="text-xs sm:text-sm text-inkLight leading-relaxed">
+                                ${sc.surfaceIssue.split('：')[1]}
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-rice border border-hairline">
+                            <h4 class="font-serif-tc font-bold text-xs uppercase tracking-wider text-inkMuted mb-2">
+                                <i class="fa-solid fa-bolt text-sage mr-1.5"></i> 心理真實張力
+                            </h4>
+                            <p class="text-xs sm:text-sm text-inkLight leading-relaxed">
+                                ${sc.coreTension[currentContext]}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Tsai Insight Quote -->
+                    <div class="p-4 rounded-xl bg-cardBg border-l-4 border-cinnabar text-ink font-serif-tc text-xs sm:text-sm italic leading-relaxed">
+                        ${sc.tsaiInsight}
+                    </div>
+
+                    <!-- 3 Tailored Scripts -->
+                    <div>
+                        <h4 class="font-serif-tc font-bold text-base text-ink mb-3 flex items-center justify-between">
+                            <span>三種得體應對句型</span>
+                            <span class="text-xs font-sans font-normal text-inkMuted">點擊複製按鈕可直接使用</span>
+                        </h4>
+
+                        <div class="space-y-3">
+                            ${scripts.map((item, idx) => `
+                                <div class="p-4 rounded-xl bg-rice border border-hairline hover:border-hairlineDark transition-all space-y-2">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-2">
+                                            <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-ink text-rice">${item.type}</span>
+                                            <span class="text-xs text-inkMuted">・${item.tag}</span>
+                                        </div>
+                                        <button onclick="copyToClipboard('${item.text.replace(/'/g, "\\'")}', '已複製「${item.type}」句型！')" class="px-3 py-1 rounded bg-paper border border-hairline text-xs font-medium text-inkLight hover:text-cinnabar hover:border-cinnabar transition-all">
+                                            <i class="fa-regular fa-copy mr-1"></i>複製句型
+                                        </button>
+                                    </div>
+                                    <p class="font-serif-tc text-xs sm:text-sm text-ink font-medium leading-relaxed bg-paper p-3 rounded-lg border border-hairline/60">
+                                        ${item.text}
+                                    </p>
+                                    <div class="text-[11px] text-inkMuted flex items-center gap-1.5 pt-1">
+                                        <i class="fa-solid fa-scale-balanced text-sage"></i>
+                                        <span><strong>代價與獲得：</strong>${item.tradeoff}</span>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // --- 5. CUSTOM REFRAMER LOGIC ---
+        function fillPreset(num) {
+            const input = document.getElementById('custom-input');
+            if (num === 1) {
+                input.value = '主管常常拍拍我的肩膀說：「這件事非你不可，辛苦一下啦」，但最後考績跟獎金完全沒有反應我的付出，我該怎麼得體回應？';
+            } else if (num === 2) {
+                input.value = '在團隊會議上，合作部門的主管當眾質疑：「這點小事你怎麼會處理成這樣？當初不是這樣說的吧！」我該怎麼回？';
+            } else if (num === 3) {
+                input.value = '下班時間一到我準備離開，同事補了一句：「真羨慕你事情做完就能走，大家都在加班呢」，聽了心裡很不舒服。';
+            }
+        }
+
+        function handleReframing(e) {
+            e.preventDefault();
+            const input = document.getElementById('custom-input').value.trim();
+            const fear = document.getElementById('fear-input').value;
+            const setting = document.getElementById('setting-input').value;
+            const resultBox = document.getElementById('reframer-result');
+
+            if (!input) {
+                showToast('請先輸入你遇到的職場困境或對話！');
+                return;
+            }
+
+            // Generate structured Kevin Tsai analysis
+            let fearText = '';
+            let strategyTip = '';
+            let scripts = [];
+
+            if (fear === 'fear-conflict') {
+                fearText = '你最害怕的是「氣氛僵掉與正面撕破臉」。';
+                strategyTip = '應對的核心是「語氣極度客氣，但邊界極度清楚」。搬出客觀第三方（行程、SOP、資源）作為擋箭牌，讓對方無法針對你個人。';
+                scripts = [
+                    { title: '情面維護型', text: `「我很理解這件事的緊急性！不過為了確保產出品質，我們是不是先按既定流程處理，我今天先為您推進最急的這一項？」` },
+                    { title: '溫柔邊界型', text: `「謝謝您第一個想到我。不過我今天時間排得很緊，怕耽誤您的進度，這部分您可以先套用 shared folder 裡的模板比較快喔！」` },
+                    { title: '延後處置型', text: `「這點子很有想法！今天時間有點趕，我先把細節整理好，明天上班第一時間發給您確認，您看這樣合適嗎？」` }
+                ];
+            } else if (fear === 'fear-time') {
+                fearText = '你最害怕的是「時間精力被無限拖垮與被迫無預警加班」。';
+                strategyTip = '應對的核心是「用客觀時間限制替代主觀拒絕」。讓對方意識到：急件需要付出時間代價，而你目前的排期已經滿載。';
+                scripts = [
+                    { title: '優先級確認型', text: `「沒問題！我目前手上正集中處理 A 專案（五點前要交）。如果這項急件要先做，您建議我先把 A 專案延後嗎？」` },
+                    { title: '時間界線型', text: `「我今晚稍後已有預定行程。我現在先花 10 分鐘完成第一階段框架，完整細節我明日上午 9:30 前補齊發給您。」` },
+                    { title: '資源對等型', text: `「要今天出稿的話，受限於時間可能只能提供初版；若要精細版本，需要延至明天中午。您偏好哪一種交付標準？」` }
+                ];
+            } else if (fear === 'fear-blame') {
+                fearText = '你最害怕的是「背黑鍋、權責不清或白忙一場」。';
+                strategyTip = '應對的核心是「把口頭承諾轉化為客觀紀錄與邊界劃分」。拒絕當混亂中的無辜接盤俠。';
+                scripts = [
+                    { title: '文字留痕型', text: `「收到您的指示。為了避免後續認知落差，我把剛才確認的決策範圍與時間軸寫成簡短 Email，發給您過目後我即刻啟動。」` },
+                    { title: '權責切割型', text: `「這部分的權限與原始資料在營運組那邊，我這邊主要協助分析。建議先由營運組確認基礎數據後，我再接手效益最高。」` },
+                    { title: '階段驗收型', text: `「沒問題，我先做前 20% 的原型供您驗收，確認方向無誤後我們再推進剩餘部分，避免做白工。」` }
+                ];
+            } else { // fear-label
+                fearText = '你最害怕的是「被貼上不配合、能力不足或缺乏團隊精神的標籤」。';
+                strategyTip = '應對的核心是「先肯定大方向與團隊價值，再說明個人客觀限制」。這會讓你顯得非常有大局觀與專業度。';
+                scripts = [
+                    { title: '大局觀肯定型', text: `「這個專案的方向非常棒！團隊目前正在全力推進 A 目標，我這邊全力配合 A 目標的交付，這項新企劃建議列入下一階段排期。」` },
+                    { title: '專家諮詢型', text: `「這塊業務涉及的專業細節較多，我可以提供先前的 SOP 與經驗分享，主導執行的部分建議由專責人員帶領會更有效率。」` },
+                    { title: '專業代價型', text: `「我很重視這個任務的品質，但以目前的人力排程若強行同時推進，兩邊品質都會打折。我建議專注把現有項目做到最好。」` }
+                ];
+            }
+
+            const settingText = setting === '1on1' ? '一對一私下場景' : (setting === 'public' ? '多人公開會議場景' : '文字訊息 / Email 場景');
+
+            resultBox.innerHTML = `
+                <div class="space-y-6">
+                    <div class="flex items-center justify-between">
+                        <span class="px-3 py-1 rounded-full bg-cinnabar/10 text-cinnabar text-xs font-serif-tc font-bold">蔡康永式局勢剖析</span>
+                        <span class="text-xs text-inkMuted">${settingText}</span>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-rice border border-hairline space-y-2">
+                        <div class="text-xs text-inkMuted font-bold">【你輸入的情境分析】</div>
+                        <p class="text-xs sm:text-sm text-ink font-serif-tc italic">"${input.replace(/</g, "&lt;").replace(/>/g, "&gt;")}"</p>
+                        <div class="pt-2 text-xs text-inkLight border-t border-hairline/60">
+                            <strong>代價剖析：</strong>${fearText} ${strategyTip}
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="text-xs font-bold text-ink tracking-wider uppercase">客製得體應對句型（點擊複製）</div>
+                        ${scripts.map(s => `
+                            <div class="p-3.5 rounded-xl bg-rice border border-hairline space-y-2 hover:border-hairlineDark transition-all">
+                                <div class="flex items-center justify-between">
+                                    <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-sage text-rice">${s.title}</span>
+                                    <button onclick="copyToClipboard('${s.text.replace(/'/g, "\\'")}', '已複製「${s.title}」句型！')" class="text-xs text-inkMuted hover:text-cinnabar">
+                                        <i class="fa-regular fa-copy mr-1"></i>複製
+                                    </button>
+                                </div>
+                                <p class="text-xs sm:text-sm text-ink font-serif-tc leading-relaxed bg-paper p-2.5 rounded border border-hairline/50">
+                                    ${s.text}
+                                </p>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <div class="p-3 rounded-lg bg-cardBg border border-hairline text-xs text-inkMuted flex items-start gap-2">
+                        <i class="fa-solid fa-quote-left text-cinnabar text-sm mt-0.5"></i>
+                        <span><strong>蔡康永的冷靜提醒：</strong>話說出口之後，不必急著觀察對方的臉色。你已經選擇了得體，剩下的情緒反應，是他自己該處理的課題。</span>
+                    </div>
+                </div>
+            `;
+
+            resultBox.classList.remove('hidden');
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // --- 6. QUOTE DECK FUNCTIONS ---
+        function renderQuoteCards() {
+            const container = document.getElementById('cards-grid');
+            let filtered = QUOTE_CARDS;
+
+            if (cardFilterMode === 'saved') {
+                filtered = QUOTE_CARDS.filter(c => savedCardIds.has(c.id));
+            }
+
+            document.getElementById('count-all').textContent = QUOTE_CARDS.length;
+            document.getElementById('count-saved').textContent = savedCardIds.size;
+
+            if (filtered.length === 0 && cardFilterMode === 'saved') {
+                container.innerHTML = `
+                    <div class="col-span-full py-12 text-center text-inkMuted bg-paper rounded-2xl border border-hairline">
+                        <i class="fa-regular fa-bookmark text-2xl mb-2 text-hairlineDark block"></i>
+                        <p class="text-sm">目前還沒有收藏任何備忘卡。</p>
+                        <button onclick="filterCards('all')" class="mt-3 text-xs text-cinnabar underline">查看所有備忘卡</button>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = filtered.map(card => {
+                const isSaved = savedCardIds.has(card.id);
+                return `
+                    <div class="perspective-1000 h-72 group">
+                        <div id="card-inner-${card.id}" class="card-inner relative w-full h-full rounded-2xl shadow-sm border border-hairline bg-paper p-5 flex flex-col justify-between cursor-pointer" onclick="flipCard(${card.id})">
+                            
+                            <!-- Front Side -->
+                            <div class="card-front absolute inset-0 p-5 flex flex-col justify-between bg-paper rounded-2xl">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <span class="px-2 py-0.5 rounded text-[10px] font-medium bg-cardBg text-inkMuted border border-hairline">${card.category}</span>
+                                        <button onclick="event.stopPropagation(); toggleSaveCard(${card.id})" class="text-sm transition-colors ${isSaved ? 'text-cinnabar' : 'text-hairlineDark hover:text-cinnabar'}">
+                                            <i class="${isSaved ? 'fa-solid' : 'fa-regular'} fa-bookmark"></i>
+                                        </button>
+                                    </div>
+                                    <p class="font-serif-tc text-xs sm:text-sm text-ink leading-relaxed font-medium mt-2">
+                                        「${card.quote}」
+                                    </p>
+                                </div>
+                                <div class="flex items-center justify-between text-[11px] text-inkMuted pt-3 border-t border-hairline/60">
+                                    <span>—— ${card.author}</span>
+                                    <span class="text-[10px] text-cinnabar font-semibold">翻面看解析 <i class="fa-solid fa-rotate-right ml-0.5"></i></span>
+                                </div>
+                            </div>
+
+                            <!-- Back Side -->
+                            <div class="card-back absolute inset-0 p-5 flex flex-col justify-between bg-rice rounded-2xl border border-hairline">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-[10px] font-bold text-sage uppercase tracking-wider">心法備忘</span>
+                                        <button onclick="event.stopPropagation(); copyToClipboard('「${card.quote}」—— ${card.author}', '已複製佳句卡！')" class="text-xs text-inkMuted hover:text-cinnabar">
+                                            <i class="fa-regular fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <p class="text-xs text-inkLight leading-relaxed mt-1 font-sans">
+                                        ${card.reflection}
+                                    </p>
+                                </div>
+                                <div class="text-[10px] text-inkMuted text-right pt-2 border-t border-hairline/60">
+                                    點擊翻回正面
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function flipCard(id) {
+            const cardInner = document.getElementById(`card-inner-${id}`);
+            if (cardInner) {
+                cardInner.classList.toggle('is-flipped');
+            }
+        }
+
+        function toggleSaveCard(id) {
+            if (savedCardIds.has(id)) {
+                savedCardIds.delete(id);
+                showToast('已取消收藏備忘卡');
+            } else {
+                savedCardIds.add(id);
+                showToast('已收藏至隨身備忘卡！');
+            }
+            renderQuoteCards();
+        }
+
+        function filterCards(mode) {
+            cardFilterMode = mode;
+            const btnAll = document.getElementById('btn-filter-all');
+            const btnSaved = document.getElementById('btn-filter-saved');
+
+            if (mode === 'all') {
+                btnAll.className = 'px-4 py-2 rounded-full border border-hairlineDark text-ink text-xs sm:text-sm font-medium hover:bg-cardBg transition-colors bg-cardBg';
+                btnSaved.className = 'px-4 py-2 rounded-full border border-hairline text-inkMuted text-xs sm:text-sm font-medium hover:bg-cardBg transition-colors';
+            } else {
+                btnSaved.className = 'px-4 py-2 rounded-full border border-hairlineDark text-ink text-xs sm:text-sm font-medium hover:bg-cardBg transition-colors bg-cardBg';
+                btnAll.className = 'px-4 py-2 rounded-full border border-hairline text-inkMuted text-xs sm:text-sm font-medium hover:bg-cardBg transition-colors';
+            }
+
+            renderQuoteCards();
+        }
+
+        function drawRandomCard() {
+            // Unflip all first
+            QUOTE_CARDS.forEach(c => {
+                const el = document.getElementById(`card-inner-${c.id}`);
+                if (el) el.classList.remove('is-flipped');
+            });
+
+            const randomCard = QUOTE_CARDS[Math.floor(Math.random() * QUOTE_CARDS.length)];
+            cardFilterMode = 'all';
+            renderQuoteCards();
+
+            setTimeout(() => {
+                const targetCard = document.getElementById(`card-inner-${randomCard.id}`);
+                if (targetCard) {
+                    targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    targetCard.classList.add('is-flipped');
+                    showToast(`抽中了「${randomCard.category}」備忘卡！`);
+                }
+            }, 200);
+        }
+    </script>
+</body>
+</html>
